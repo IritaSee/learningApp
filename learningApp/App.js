@@ -1,22 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet,Image, Button, View, SafeAreaView, Text, Alert, TextInput } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to school id ! {'\n'}
-      </Text> 
-      <Image source={require('assets/splash.png')} style={{ width: 200, height: 200 }} />
-     
+      <Text style={styles.title}>Selamat datang di school id!{'\n'}</Text> 
+      { <Image source={require('./assets/opening.png')} style={{ width: 200, height: 200 }}/> }
       <TextInput style={{
           height: 40,
           width: 300,
           borderColor: 'gray',
           borderWidth: 1
         }}
-        defaultValue="Masukan nama sekolah..."
+        placeholder="Masukan nama sekolah..."
+        // onChangeText={text => setText(text)}
+        // defaultValue={text}
       ></TextInput>
+      <Text>{'\n'}</Text>
+      <Button
+        title="Lanjutkan"
+        color='blue'
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
       <StatusBar style="auto" />
     </View>
   );
