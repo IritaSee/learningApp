@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet,Image, Button, View, SafeAreaView, Text, Alert, TextInput } from 'react-native';
-
+import { StyleSheet,Image, Button, View, SafeAreaView, Text, Alert, TextInput, Inputs } from 'react-native';
+NamaSekolah='';
 export default function App() {
   return (
     <View style={styles.container}>
@@ -14,11 +14,11 @@ export default function App() {
           borderWidth: 1
         }}
         placeholder="Masukan nama sekolah..."
-        // onChangeText={text => setText(text)}
-        // defaultValue={text}
+         onChangeText={NamaSekolah => setText(NamaSekolah)}
+         defaultValue={NamaSekolah}
       ></TextInput>
       <Text>{'\n'}</Text>
-      <Button
+      <Button 
         title="Lanjutkan"
         color='blue'
         onPress={() => Alert.alert('Simple Button pressed')}
