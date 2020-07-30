@@ -12,7 +12,7 @@ class GuruController extends Controller
     public function index()
     {
         $guru=Guru::all();
-        $kelas=Kelas::all();
+        $kelas=Guru::all();
         $sekolah=Sekolah::all();
         return view('list_guru',['guru'=>$guru, 'kelas'=>$kelas, 'sekolah'=>$sekolah]);
     }
