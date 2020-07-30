@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/base', function () {
+    return view('base');
+});
+
+//crud guru
+Route::get('/guru/tambah','GuruController@tambah');
+Route::get('/admin/guru','GuruController@index');
+
