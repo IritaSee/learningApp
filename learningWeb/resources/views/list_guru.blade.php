@@ -21,7 +21,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
-                                <th>Sekolah ID</th>
+                                <th>Sekolah </th>
                                 <th>Kelas ID</th>
                                 <th>OPSI</th>
                             </tr>
@@ -31,7 +31,11 @@
                             <tr>
                                 <td>{{ $p->id }}</td>
                                 <td>{{ $p->name }}</td>
-                                <td>{{ $p->sekolah_id }}</td>
+                                <td>
+                                @foreach($p->sekolah as $s)
+                                {{ $s->sekolah }}
+                                @endforeach
+                                </td>
                                 <td>{{ $p->kelas_id }}</td>
 
                                 <td>

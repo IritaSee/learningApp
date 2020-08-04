@@ -8,6 +8,6 @@ class Kelas extends Model
 {
     protected $table = "kelas";
     public function guru(){
-    	return $this->hasMany('App\Guru');
+    	return $this->hasOne('App\Guru');
     }
 }

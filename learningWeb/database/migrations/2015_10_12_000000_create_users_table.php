@@ -17,11 +17,22 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('password');
-            $table->integer('sekolah_id');
-            $table->integer('kelas_id');
+            $table->unsignedInteger('sekolah_id');
+            $table->unsignedInteger('kelas_id');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('sekolah_id')
+            ->references('id')
+            ->on('sekolahs')
+            ->onDelete('cascade');
+
+            $table->foreign('kelas_id')
+            ->references('id')
+            ->on('kelas')
+            ->onDelete('cascade');
         });
+        
     }
 
     /**

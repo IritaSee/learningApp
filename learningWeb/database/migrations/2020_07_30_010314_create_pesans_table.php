@@ -16,10 +16,26 @@ class CreatePesansTable extends Migration
         Schema::create('pesans', function (Blueprint $table) {
             $table->increments('id');
             $table->text('pesan');
-            $table->integer('user_id');
-            $table->integer('guru_id');
-            $table->integer('konten_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('guru_id');
+            $table->unsignedInteger('konten_id');
             $table->timestamps();
+            
+            $table->foreign('guru_id')
+            ->references('id')
+            ->on('gurus')
+            ->onDelete('cascade');
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
+
+            $table->foreign('konten_id')
+            ->references('id')
+            ->on('kelas')
+            ->onDelete('cascade');
+            
         });
     }
 

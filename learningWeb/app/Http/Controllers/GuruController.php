@@ -12,9 +12,9 @@ class GuruController extends Controller
     public function index()
     {
         $guru=Guru::all();
-        $kelas=Guru::all();
-        $sekolah=Sekolah::all();
-        return view('list_guru',['guru'=>$guru, 'kelas'=>$kelas, 'sekolah'=>$sekolah]);
+        // $kelas=Kelas::all();
+        // $sekolah=Sekolah::all();
+        return view('list_guru',['guru'=>$guru]);
     }
     public function tambah()
     {

@@ -16,10 +16,19 @@ class CreateKelasTable extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('pelajaran');
-            $table->integer('guru_id');
-            $table->integer('sekolah_id');
-            $table->integer('konten_id');
+            $table->unsignedInteger('sekolah_id');
+            $table->unsignedInteger('konten_id');
             $table->timestamps();
+
+            $table->foreign('sekolah_id')
+            ->references('id')
+            ->on('sekolahs')
+            ->onDelete('cascade');
+
+            $table->foreign('konten_id')
+            ->references('id')
+            ->on('kelas')
+            ->onDelete('cascade');
         });
     }
 
