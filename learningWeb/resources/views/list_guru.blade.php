@@ -28,13 +28,11 @@
                         </thead>
                         <tbody>
                             @foreach($guru as $p)
-                            <tr>
+                            <tr>    
                                 <td>{{ $p->id }}</td>
                                 <td>{{ $p->name }}</td>
                                 <td>
-                                @foreach($p->sekolah as $s)
-                                {{ $s->sekolah }}
-                                @endforeach
+                                {{$p->sekolah_id}}
                                 </td>
                                 <td>{{ $p->kelas_id }}</td>
 

@@ -24,4 +24,4 @@ Route::get('/base', function () {
 //crud guru
 Route::get('/guru/tambah','GuruController@tambah');
 Route::get('/admin/guru','GuruController@index');
-
+Route::post('/guru/store','GuruController@store');

@@ -23,23 +23,47 @@
 
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" name="nama" class="form-control" placeholder="Nama guru ..">
+                            <input type="text" name="name" class="form-control" placeholder="Nama guru ..">
 
-                            @if($errors->has('nama'))
+                            @if($errors->has('name'))
                                 <div class="text-danger">
-                                    {{ $errors->first('nama')}}
+                                    {{ $errors->first('name')}}
                                 </div>
                             @endif
 
                         </div>
 
                         <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea name="alamat" class="form-control" placeholder="Alamat pegawai .."></textarea>
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="********">
 
-                             @if($errors->has('alamat'))
+                            @if($errors->has('password'))
                                 <div class="text-danger">
-                                    {{ $errors->first('alamat')}}
+                                    {{ $errors->first('password')}}
+                                </div>
+                            @endif
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID Sekolah</label>
+                            <textarea name="sekolah_id" class="form-control" placeholder="1"></textarea>
+
+                             @if($errors->has('sekolah_id'))
+                                <div class="text-danger">
+                                    {{ $errors->first('sekolah_id')}}
+                                </div>
+                            @endif
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID Kelas</label>
+                            <textarea name="kelas_id" class="form-control" placeholder="2"></textarea>
+
+                             @if($errors->has('kelas_id'))
+                                <div class="text-danger">
+                                    {{ $errors->first('kelas_id')}}
                                 </div>
                             @endif
 
